@@ -10,5 +10,5 @@ package streaming;
  * @author x00116788
  */
 public class Cache {
-    
+    int id, size;
 }
