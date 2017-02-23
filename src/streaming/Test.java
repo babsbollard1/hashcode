@@ -22,10 +22,19 @@ public class Test {
         String line, token, delimiter = " ";
         StringTokenizer tokenizer;
         boolean firstLine = true;
-        int numVid = 0;
-        int numEP = 0;
-        int numRD;
-        int numCache;
+        int numVid, numEP, numRD,numCache, cacheSize;
+        int vidarr[] = {20,11,50,26,5,3,6,32,40,22,4,20,50,27,49,44,1,37,35,27,14,33,6,
+            22,23,48,44,14,26,9,46,44,15,32,31,8,39,27,39,27,1,17,1,47,44,42,16,3,44,48,
+            5,25,4,39,39,7,24,28,14,44,22,11,27,37,11,16,50,33,22,26,7,12,17,30,12,12,4,
+            32,12,46,43,4,12,34,11,7,47,29,24,40,41,10,5,22,22,24,37,34,50,5};
+        int sum = 0;
+        for (int i = 0; i < vidarr.length; i++) {
+           while(sum < 6000){
+               sum+=vidarr[i];
+           }
+            
+        }
+
 
 
         BufferedReader br = null;
@@ -45,8 +54,12 @@ public class Test {
                     numRD = Integer.parseInt(token);
                     token = tokenizer.nextToken();
                     numCache = Integer.parseInt(token);
+                    token = tokenizer.nextToken();
+                    cacheSize = Integer.parseInt(token);
                    // pizzaPie = new Pizza(rows, columns, ingredients, maxSlice);
                     System.out.println("number of Videos " +numVid+ "videos");
+                    System.out.println("number of caches" + numCache);
+                    System.out.println("cache size" + cacheSize);
                     firstLine = false;
                 } else {
                     
@@ -55,9 +68,9 @@ public class Test {
                         
                         }
                     }
+                line = br.readLine(); // next lin
                 }
-                            line = br.readLine(); // next line
-
+                            
             }
             
         }catch(IOException e){
